@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For U My Love</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            animation: fadeDown 1.5s ease;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main container */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 320px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            background: #ff9800;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        button:hover {
+            background: #e68900;
+            transform: scale(1.05);
+        }
+
+        /* Image & Video animation */
+        .image-box,
+        .video-box {
+            margin-top: 20px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            display: none;
+        }
+
+        .image-box img,
+        .video-box video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>For u my love ❤️</h1>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <button onclick="openImage()">Open Image</button>
+        <button onclick="openVideo()">Click Me</button>
+
+        <!-- Image -->
+        <div class="image-box" id="imageBox">
+            <img src="ananzy.jpg" alt="My Love">
+        </div>
+
+        <!-- Video -->
+        <div class="video-box" id="videoBox">
+            <video controls>
+                <source src="www.mp4" type="video/mp4">
+                Your browser does not support the video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function openImage() {
+            document.getElementById("imageBox").classList.toggle("show");
+        }
+
+        function openVideo() {
+            document.getElementById("videoBox").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
